@@ -1,0 +1,87 @@
+<div>
+	<!-- 顶部 start -->
+	<div class="row">
+		<div class="col-md-12">
+			<div>
+				<button type="button" class="btn btn-default" ng-repeat="(actionIndex, topAction) in options.topActions" ng-click="topAction.action(checkIds,checkItems,allItems,$event)" ng-bind-html="topAction.name | to_trusted"></button>
+			</div>
+		</div>
+	</div>
+	<!-- 顶部 end -->
+
+	<!-- 表格 start -->
+	<div class="row">
+		<div class="col-md-12">
+			<div>
+				<table class="table table-striped table-bordered table-hover table-condensed">
+					<!-- 表头 start -->
+					<thead>
+						<tr>
+							<th><input type="checkbox" ng-model="checkAllFlag" ng-change="checkAll()"/></th>
+							<th><span>序号</span></th>
+							<th ng-repeat="column in options.columns track by $index" ng-bind-html="column.displayName | to_trusted"></th>
+							<th>操作</th>
+						</tr>
+					</thead>
+					<!-- 表头 end -->
+
+					<!-- 脚注 start -->
+					<!-- <tfoot>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+					</tfoot> -->
+					<!-- 脚注 end -->
+
+					<!-- 无单元格合并 start -->
+					<tbody>
+						<tr ng-repeat="(rowIndex, row) in rowList">
+							<td><input type="checkbox" ng-model="row.checked" ng-change="checkOne()" /></td>
+							<td ng-bind="rowIndex+1"></td>
+							<!-- <td ng-if="typeof(row[col['field']])==string" ng-repeat="(colIndex, col) in options.columns" ng-bind-html="row[col['field']] | to_trusted"></td> -->
+							<td ng-repeat="(colIndex, col) in options.columns">{{row[col['field']]}}</td>
+							<td>{{typeof('niaho')}}</td>
+						</tr>
+					</tbody>
+					<!-- 无单元格合并 end -->
+
+					<!-- 有单元格合并 start -->
+<!-- 					<tbody>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+					</tbody> -->
+					<!-- 有单元格合并 end -->
+			
+					<!-- 数据异常 start -->
+<!-- 					<tbody>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+					</tbody> -->
+					<!-- 数据异常 end -->
+				</table>
+			</div>
+		</div>
+	</div>
+	<!-- 表格end -->
+
+	<!-- 底部 start -->
+	<div class="row">
+		<div class="col-md-12">
+			<div>
+				<button type="button" class="btn btn-default" ng-repeat="(actionIndex, botAction) in options.botActions" ng-click="botAction.action(checkIds,checkItems,allItems,$event)" ng-bind-html="botAction.name | to_trusted"></button>
+			</div>
+		</div>
+	</div>
+	<!-- 底部 end -->
+</div>
