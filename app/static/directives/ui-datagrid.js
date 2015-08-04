@@ -58,7 +58,13 @@ angular.module('elapse.ui', []).directive('uiDatagrid', ['$http', function ($htt
                         console.log(allItems);
                     }
                 },
-                {name: '打印'},
+                {
+                	name: '打印',
+                	dropdowns: [
+                		{'name': '打印所选'},
+                		{'name': '打印全部'}
+                	]
+            	},
                 {name: '删除'},
                 {name: '审核'}
             ];

@@ -3,7 +3,16 @@
 	<div class="row">
 		<div class="col-md-12">
 			<div>
-				<button type="button" class="btn btn-default" ng-repeat="(actionIndex, topAction) in options.topActions" ng-click="topAction.action(checkIds,checkItems,allItems,$event)" ng-bind-html="topAction.name | to_trusted"></button>
+				<button type="button" class="btn btn-sm btn-info" ng-repeat="(actionIndex, topAction) in options.topActions" ng-click="topAction.action(checkIds,checkItems,allItems,$event)" ng-bind-html="topAction.name | to_trusted"></button>
+			</div>
+			<div class="btn-group" ng-repeat="(actionIndex, topAction) in options.topActions" ng-if="!!topAction.dropdowns && topAction.dropdowns.length>0">
+				<button type="button" class="btn btn-sm btn-info dropdown-toggle" data-toggle="dropdown" ng-click="topAction.action(checkIds,checkItems,allItems,$event)">
+				 	{{topAction.name}}
+					<span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu">
+					<li ng-repeat="(dropdownIndex, dropdown) in topAction.dropdowns"><a href="">{{dropdown.name}}</a></li>
+				</ul>
 			</div>
 		</div>
 	</div>
@@ -79,7 +88,7 @@
 	<div class="row">
 		<div class="col-md-12">
 			<div>
-				<button type="button" class="btn btn-default" ng-repeat="(actionIndex, botAction) in options.botActions" ng-click="botAction.action(checkIds,checkItems,allItems,$event)" ng-bind-html="botAction.name | to_trusted"></button>
+				<button type="button" class="btn btn-sm btn-info" ng-repeat="(actionIndex, botAction) in options.botActions" ng-click="botAction.action(checkIds,checkItems,allItems,$event)" ng-bind-html="botAction.name | to_trusted"></button>
 			</div>
 		</div>
 	</div>
