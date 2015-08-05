@@ -24,6 +24,10 @@ angular.module('elapse.ui', []).directive('uiDatagrid', ['$http', function ($htt
 
             $scope.options = {};
 
+            $scope.sortBy = 'name';
+
+            $scope.orderAsc = true;
+
             $scope.checkAllFlag = false;
 
             $scope.checkIds = [];
@@ -32,7 +36,7 @@ angular.module('elapse.ui', []).directive('uiDatagrid', ['$http', function ($htt
 
             $scope.allItems = [];
 
-            /*************** 模拟数据 start ***************/
+            /************** 模拟数据 start **************/
             $scope.options.columns = [
                 {'field': 'id', 'displayName': 'id'},
                 {'field': 'name', 'displayName': '<b style="color:#888888">姓名</b>'},
@@ -76,7 +80,7 @@ angular.module('elapse.ui', []).directive('uiDatagrid', ['$http', function ($htt
             ];
             /*************** 模拟数据 end ***************/
 
-
+			/************** 控制逻辑 start **************/
             $scope.checkAll = function () {
                 $scope.checkIds = [];
                 $scope.checkItems = [];
@@ -110,7 +114,20 @@ angular.module('elapse.ui', []).directive('uiDatagrid', ['$http', function ($htt
                 //    }
                 //}
                 //$scope.checkAllFlag = true;
+                
             };
+
+            $scope.changeSortField = function(field){
+            	if($scope.sortBy !== field){
+            		$scope.sortBy = field;
+            		$scope.orderAsc = true;
+            	}else{
+            		$scope.orderAsc = !$scope.orderAsc;
+            	}
+            	console.log($scope.sortBy)
+            	console.log($scope.orderAsc)
+            };
+            /*************** 控制逻辑 end ***************/
         }
     };
 }]).filter('to_trusted', ['$sce', function ($sce) {
