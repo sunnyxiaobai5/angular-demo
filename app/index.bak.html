@@ -9,6 +9,7 @@
 
 <!-- header start -->
 <div ui-view="navbar"></div>
+<!--<div ui-view></div>-->
 <!-- header end -->
 
 <!-- flash start -->
@@ -50,11 +51,77 @@
 
 <hr/>
 
+<div class="container">
+    <div class="col-md-2">
+        <ul class="nav" id="accordion">
+            <li class="active">
+                <a href="#collapse1" data-toggle="collapse" data-parent="#accordion">导航1</a>
+                <ul class="collapse" id="collapse1">
+                    <li><a href="#">nav1</a></li>
+                    <li><a href="#">nav2</a></li>
+                    <li><a href="#">nav3</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#collapse2" data-toggle="collapse" data-parent="#accordion">导航2</a>
+                <ul class="collapse" id="collapse2">
+                    <li><a href="#">nav1</a></li>
+                    <li><a href="#">nav2</a></li>
+                    <li><a href="#">nav3</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#collapse3" data-toggle="collapse" data-parent="#accordion">导航3</a>
+                <ul class="collapse" id="collapse3">
+                    <li><a href="#">nav1</a></li>
+                    <li><a href="#">nav2</a></li>
+                    <li><a href="#">nav3</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<hr/>
+<div class="container">
+
+    <a href="javascrit:(0)" class="btn btn-default" ng-click="order='id';reverse=true">初始化按id排序</a>
+    <a href="javascrit:(0)" class="btn btn-default" ng-click="order='name';reverse=!reverse">按名字排序</a>
+    <a href="javascrit:(0)" class="btn btn-default" ng-click="order='time';reverse=!reverse">按时间排序</a>
+
+    <div>
+        <input type="checkbox" ng-change="allChecked()" ng-model="selectAllFlag"/>
+        <ul>
+            <li ng-repeat="item in infoList | orderBy:order:!reverse">
+                <input type="checkbox" ng-model="item.selected"
+                       ng-change="checkOne()"/>id:{{item.id}}----name:{{item.name}}-----time:{{item.time}}
+            </li>
+        </ul>
+    </div>
+</div>
+<hr/>
+
+<div class="container">
+
+    <a href="javascrit:(0)" class="btn btn-default" ng-click="sortFiled='id';sort=!sort">初始化按id排序<span ng-if="sortFiled=='id'">--id<span ng-if="sort==true">--UP</span><span ng-if="sort==false">--DOWN</span></span></a>
+    <a href="javascrit:(0)" class="btn btn-default" ng-click="sortFiled='name';sort=!sort">按名字排序<span ng-if="sortFiled=='name'">--name<span ng-if="sort==true">--UP</span><span ng-if="sort==false">--DOWN</span></span></a>
+    <a href="javascrit:(0)" class="btn btn-default" ng-click="sortFiled='time';sort=!sort">按时间排序<span ng-if="sortFiled=='time'">--time<span ng-if="sort==true">--UP</span><span ng-if="sort==false">--DOWN</span></span></a>
+
+    <div>
+        <input type="checkbox" ng-change="allChecked()" ng-model="selectAllFlag"/>
+        <ul>
+            <li ng-repeat="item in infoList | orderBy:sortFiled:sort">
+                <input type="checkbox" ng-model="item.selected"
+                       ng-change="checkOne()"/>id:{{item.id}}----name:{{item.name}}-----time:{{item.time}}
+            </li>
+        </ul>
+    </div>
+</div>
+
 <!-- footer start -->
-<!--<div class="container">-->
-    <!--footer-->
-<!--</div>-->
-<div ui-view="footer">footer：请用路由替换掉</div>
+<div class="container">
+    footer
+</div>
 <!-- footer end -->
 
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
