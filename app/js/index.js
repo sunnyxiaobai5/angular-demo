@@ -45,7 +45,7 @@ angular.module("clapse").controller("HomeController", ["$scope", function ($scop
     };
 
     $scope.$watch("selectAllFlag", function () {
-        console.log($scope.selectAllFlag)
+        
     });
 
 }]);
