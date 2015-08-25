@@ -38,8 +38,10 @@ angular.module("clapse", ['ui.router']).run(function ($rootScope, $state) {
     //$httpProvider.defaults.xsrfHeaderName = 'X-CSRF-TOKEN';
 
     $urlRouterProvider.when("", "/home");
-    //$urlRouterProvider.when("/home", "/home/teacher");
-    //$urlRouterProvider.otherwise('/home');
+    $urlRouterProvider.when("/home", "/home/index");
+    $urlRouterProvider.when("/teacher", "/teacher/index");
+    $urlRouterProvider.when("/student", "/student/index");
+    $urlRouterProvider.otherwise('/home');
 
     $stateProvider
         //.state('demo', {
@@ -114,7 +116,7 @@ angular.module("clapse", ['ui.router']).run(function ($rootScope, $state) {
             //}
         })
         .state('home', {
-            //'abstract': true,
+            'abstract': true,
             // parent: 'site',  
             url: '/home',
             data: {
@@ -124,10 +126,6 @@ angular.module("clapse", ['ui.router']).run(function ($rootScope, $state) {
                 'navbar@': {
                     templateUrl: 'tpls/components/navbar/navbar.html',
                     controller: 'NavbarController'
-                },
-                '': {
-                    templateUrl: 'tpls/index.tpl.html',
-                    controller: 'HomeController'
                 },
                 'footer@': {
                     templateUrl: 'tpls/components/footer/footer.html',
@@ -147,12 +145,8 @@ angular.module("clapse", ['ui.router']).run(function ($rootScope, $state) {
             url: '/teacher',
             views: {
                 'navbar@': {
-                    templateUrl: 'tpls/components/navbar/navbar.html',
+                    templateUrl: 'tpls/components/navbar/teacher.html',
                     controller: 'NavbarController'
-                },
-                '': {
-                    template: '<div class="container"><h1>教师默认页</h1></div>',
-                    controller: 'HomeController'
                 },
                 'footer@': {
                     templateUrl: 'tpls/components/footer/footer.html',
@@ -166,12 +160,8 @@ angular.module("clapse", ['ui.router']).run(function ($rootScope, $state) {
             url: '/student',
             views: {
                 'navbar@': {
-                    templateUrl: 'tpls/components/navbar/navbar.html',
+                    templateUrl: 'tpls/components/navbar/student.html',
                     controller: 'NavbarController'
-                },
-                '': {
-                    template: '<div class="container"><h1>学生默认页</h1></div>',
-                    controller: 'HomeController'
                 },
                 'footer@': {
                     templateUrl: 'tpls/components/footer/footer.html',
@@ -179,22 +169,32 @@ angular.module("clapse", ['ui.router']).run(function ($rootScope, $state) {
                 }
             }
         })
-        .state('teacher.page1', {
-            //parent: 'teacher',
-            url: '/page1',
+        .state('home.index', {
+            //parent: 'home',
+            url: '/index',
             views: {
                 '@': {
-                    template: '<div class="container"><h1>教师PAGE1页面</h1></div>',
+                    templateUrl: 'tpls/home/index.html',
                     controller: 'HomeController'
                 }
             }
         })
-        .state('student.page1', {
-            //parent: 'student',
-            url: '/page1',
+        .state('teacher.index', {
+            //parent: 'teacher',
+            url: '/index',
             views: {
                 '@': {
-                    template: '<div class="container"><h1>学生PAGE1页面</h1></div>',
+                    templateUrl: 'tpls/teacher/index.html',
+                    controller: 'HomeController'
+                }
+            }
+        })
+        .state('student.index', {
+            //parent: 'student',
+            url: '/index',
+            views: {
+                '@': {
+                    templateUrl: 'tpls/student/index.html',
                     controller: 'HomeController'
                 }
             }

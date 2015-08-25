@@ -4,21 +4,13 @@
     <meta charset="UTF-8">
     <title></title>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="css/app.css">
 </head>
 <body>
 
 <!-- header start -->
 <div ui-view="navbar">路由替换前的header</div>
 <!-- header end -->
-
-<!-- flash start -->
-<div class="container">
-    <div style="height:300px">
-        banner 区域
-    </div>
-    <hr/>
-</div>
-<!-- flash end -->
 
 <!-- main start -->
 <div ui-view></div>
@@ -28,7 +20,7 @@
 
 <!-- footer start -->
 <!--<div class="container">-->
-    <!--footer-->
+<!--footer-->
 <!--</div>-->
 <div ui-view="footer">路由替换前的footer</div>
 <!-- footer end -->
