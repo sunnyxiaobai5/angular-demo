@@ -1,6 +1,8 @@
 'use strict';
 
-angular.module("clapse", ['ui.router']).run(function ($rootScope, $state) {
+angular.module('clapse', ['ui.router']).run(function ($rootScope, $state, $templateCache) {
+
+    $templateCache.put('hello.html','<div>hello use templateCache</div>');
 
     $rootScope.$on('stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
         $rootScope.toState = toState;
