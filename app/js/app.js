@@ -2,7 +2,7 @@
 
 angular.module('clapse', ['ui.router']).run(function ($rootScope, $state, $templateCache) {
 
-    $templateCache.put('hello.html','<div>hello use templateCache</div>');
+    $templateCache.put('hello.html', '<div>hello use templateCache</div>');
 
     $rootScope.$on('stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
         $rootScope.toState = toState;
@@ -143,7 +143,6 @@ angular.module('clapse', ['ui.router']).run(function ($rootScope, $state, $templ
         })
         .state('teacher', {
             'abstract': true,
-            //parent: 'home',
             url: '/teacher',
             views: {
                 'navbar@': {
@@ -158,7 +157,6 @@ angular.module('clapse', ['ui.router']).run(function ($rootScope, $state, $templ
         })
         .state('student', {
             'abstract': true,
-            //parent: 'home',
             url: '/student',
             views: {
                 'navbar@': {
@@ -197,6 +195,57 @@ angular.module('clapse', ['ui.router']).run(function ($rootScope, $state, $templ
             views: {
                 '@': {
                     templateUrl: 'tpls/student/index.html',
+                    controller: 'HomeController'
+                }
+            }
+        })
+
+        .state('home.directives', {
+            //parent: 'home',
+            url: '/directives',
+            views: {
+                '@': {
+                    templateUrl: 'tpls/components/sidebar/sidebar-directives.html',
+                    controller: 'HomeController'
+                }
+            }
+        })
+        .state('home.services', {
+            //parent: 'student',
+            url: '/services',
+            views: {
+                '@': {
+                    templateUrl: 'tpls/components/sidebar/sidebar-services.html',
+                    controller: 'HomeController'
+                }
+            }
+        })
+        .state('home.filters', {
+            //parent: 'student',
+            url: '/filters',
+            views: {
+                '@': {
+                    templateUrl: 'tpls/components/sidebar/sidebar-filters.html',
+                    controller: 'HomeController'
+                }
+            }
+        })
+        .state('home.config', {
+            //parent: 'student',
+            url: '/config',
+            views: {
+                '@': {
+                    templateUrl: 'tpls/components/sidebar/sidebar-config.html',
+                    controller: 'HomeController'
+                }
+            }
+        })
+        .state('home.others', {
+            //parent: 'student',
+            url: '/others',
+            views: {
+                '@': {
+                    templateUrl: 'tpls/components/sidebar/sidebar-others.html',
                     controller: 'HomeController'
                 }
             }
