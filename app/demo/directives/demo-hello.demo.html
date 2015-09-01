@@ -1,28 +1,20 @@
-<!DOCTYPE html>
-<html lang="en" ng-app="demo">
-
-<head>
-	<meta charset="UTF-8">
-	<title>demo-hello.demo</title>
-	<link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap.css">
-</head>
-<body>
-	<div class="container">
-		Attribute(A):
-		<div demo-hello></div>
-		Element(E):
-		<demo-hello></demo-hello>
-		Class(C):
-		<div class="demo-hello"></div>
-		Comment(M):&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:red">replace:true时才生效</span>
-		<!-- directive:demo-hello -->
-		<div></div>
-	</div>
-	<script src="../../bower_components/jquery/dist/jquery.min.js"></script>
-	<script src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-	<script src="../../bower_components/angular/angular.js"></script>
-
-	<script src="demo.js"></script>
-	<script src="demo-hello.js"></script>
-</body>
-</html>
+<div class="container">
+	<ul>
+		<li>
+			Attribute(A):
+			<div demo-hello></div>
+		</li>
+		<li>
+			Element(E):
+			<demo-hello></demo-hello>
+		</li>
+		<li>
+			Class(C):
+			<div class="demo-hello"></div>
+		</li>
+		<li>
+			Comment(M):&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-danger">replace:true时才生效</span>
+			<!-- directive:demo-hello -->
+		</li>
+	</ul>
+</div>

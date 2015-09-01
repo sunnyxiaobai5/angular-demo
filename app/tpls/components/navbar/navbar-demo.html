@@ -1,17 +1,30 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
-            <a href="#" class="navbar-brand">AngularJS</a>
+            <a href="#" ui-sref="demo.index" class="navbar-brand">{{siteName}}</a>
         </div>
         <ul class="nav navbar-nav">
-            <li><a href="#">Directives Demo</a></li>
-            <li><a href="#">Services Demo</a></li>
-            <li><a href="#">Filters Demo</a></li>
-            <li><a href="#">Providers Demo</a></li>
-            <li><a href="#">Config Demo</a></li>
+            <li ui-sref-active="active" ng-repeat="(index, item) in navDefs">
+                <a href="#" ui-sref="{{item.state}}">{{item.displayName}}</a>
+            </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">关于我们</a></li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="javascrit:void(0)">
+                    切换
+                    <span class="caret"></span>
+                    <span class="sr-only">Toggle Dropdown</span> 
+                </a>
+                <ul class="dropdown-menu">
+                    <li ui-sref-active="active" ng-repeat-start="(index, item) in siteDefs">
+                        <a href="javascript:void(0)" ui-sref="{{item.state}}">
+                            <span class="{{item.icon}}"></span>
+                            {{item.displayName}}
+                        </a>
+                    </li>
+                    <li class="divider" ng-repeat-end ng-show="!$last"></li>
+                </ul>
+            </li>
             <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                     <span class="glyphicon glyphicon-user"></span>

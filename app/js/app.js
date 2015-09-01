@@ -1,8 +1,6 @@
 'use strict';
 
-angular.module('clapse', ['ui.router']).run(function ($rootScope, $state, $templateCache) {
-
-    $templateCache.put('hello.html','<div>hello use templateCache</div>');
+angular.module('clapse', ['ui.router','demo']).run(function ($rootScope, $state, $templateCache) {
 
     $rootScope.$on('stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
         $rootScope.toState = toState;
@@ -38,12 +36,6 @@ angular.module('clapse', ['ui.router']).run(function ($rootScope, $state, $templ
     //enable CSRF
     //$httpProvider.defaults.xsrfCookieName = 'CSRF-TOKEN';
     //$httpProvider.defaults.xsrfHeaderName = 'X-CSRF-TOKEN';
-
-    $urlRouterProvider.when("", "/home");
-    $urlRouterProvider.when("/home", "/home/index");
-    $urlRouterProvider.when("/teacher", "/teacher/index");
-    $urlRouterProvider.when("/student", "/student/index");
-    $urlRouterProvider.otherwise('/home');
 
     $stateProvider
         //.state('demo', {
@@ -97,108 +89,24 @@ angular.module('clapse', ['ui.router']).run(function ($rootScope, $state, $templ
         //        }]
         //    }
         //})
-        .state('site', {
-            'abstract': true,
-            views: {
-                'navbar@': {
-                    templateUrl: 'tpls/components/navbar/navbar.html',
-                    controller: 'NavbarController'
-                }
-            }
-            //resolve: {
-            //    //authorize: ['Auth',
-            //    //    function (Auth) {
-            //    //        return Auth.authorize();
-            //    //    }
-            //    //],
-            //    //translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
-            //    //    $translatePartialLoader.addPart('global');
-            //    //    $translatePartialLoader.addPart('language');
-            //    //}]
-            //}
-        })
-        .state('home', {
-            'abstract': true,
-            // parent: 'site',  
-            url: '/home',
-            data: {
-                roles: []
-            },
-            views: {
-                'navbar@': {
-                    templateUrl: 'tpls/components/navbar/navbar.html',
-                    controller: 'NavbarController'
-                },
-                'footer@': {
-                    templateUrl: 'tpls/components/footer/footer.html',
-                    controller: 'HomeController'
-                }
-            },
-            resolve: {
-                //mainTranslatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
-                //    $translatePartialLoader.addPart('main');
-                //    return $translate.refresh();
-                //}]
-            }
-        })
-        .state('teacher', {
-            'abstract': true,
-            //parent: 'home',
-            url: '/teacher',
-            views: {
-                'navbar@': {
-                    templateUrl: 'tpls/components/navbar/teacher.html',
-                    controller: 'NavbarController'
-                },
-                'footer@': {
-                    templateUrl: 'tpls/components/footer/footer.html',
-                    controller: 'HomeController'
-                }
-            }
-        })
-        .state('student', {
-            'abstract': true,
-            //parent: 'home',
-            url: '/student',
-            views: {
-                'navbar@': {
-                    templateUrl: 'tpls/components/navbar/student.html',
-                    controller: 'NavbarController'
-                },
-                'footer@': {
-                    templateUrl: 'tpls/components/footer/footer.html',
-                    controller: 'HomeController'
-                }
-            }
-        })
-        .state('home.index', {
-            //parent: 'home',
-            url: '/index',
-            views: {
-                '@': {
-                    templateUrl: 'tpls/home/index.html',
-                    controller: 'HomeController'
-                }
-            }
-        })
-        .state('teacher.index', {
-            //parent: 'teacher',
-            url: '/index',
-            views: {
-                '@': {
-                    templateUrl: 'tpls/teacher/index.html',
-                    controller: 'HomeController'
-                }
-            }
-        })
-        .state('student.index', {
-            //parent: 'student',
-            url: '/index',
-            views: {
-                '@': {
-                    templateUrl: 'tpls/student/index.html',
-                    controller: 'HomeController'
-                }
-            }
-        });
+        // .state('site', {
+        //     'abstract': true,
+        //     views: {
+        //         'navbar@': {
+        //             templateUrl: 'tpls/components/navbar/navbar.html',
+        //             controller: 'NavbarController'
+        //         }
+        //     }
+        //     resolve: {
+        //        authorize: ['Auth',
+        //           function (Auth) {
+        //               return Auth.authorize();
+        //           }
+        //        ],
+        //        translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
+        //           $translatePartialLoader.addPart('global');
+        //           $translatePartialLoader.addPart('language');
+        //        }]
+        //     }
+        // })
 });
