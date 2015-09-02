@@ -1,0 +1,10 @@
+<div class="container">
+	<h3>指令访问控制器中的数据和方法</h3>
+	通过Link函数 function($scope, iElm, iAttrs, controller)<br>iElem获取dom元素绑定click事件并调用iAttrs获取的自定义事件处理函数<br>
+</div>
+<div class="container" ng-controller="DemoLinkDemoController1">
+	<button class="btn btn-default" demo-link customEventMethod="customFunction1()">Controller1</button>
+</div>
+<div class="container" ng-controller="DemoLinkDemoController2">
+	<button class="btn btn-default" demo-link customEventMethod="customFunction2()">Controller2</button>
+</div>

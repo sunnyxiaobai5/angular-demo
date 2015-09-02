@@ -1,4 +1,6 @@
-angular.module('demo').directive('demoTransclude', ['$rootScope', function($rootScope){
+'use strict'
+
+angular.module('demo').directive('demoIsolateScope', [function(){
 	// Runs during compile
 	return {
 		// name: '',
@@ -7,11 +9,11 @@ angular.module('demo').directive('demoTransclude', ['$rootScope', function($root
 		// scope: {}, // {} = isolate, true = child, false/undefined = no change
 		// controller: function($scope, $element, $attrs, $transclude) {},
 		// require: 'ngModel', // Array = multiple requires, ? = optional, ^ = check parent elements
-		// restrict: 'A', // E = Element, A = Attribute, C = Class, M = Comment
-		template: '<div>指令区域：<h3>transclude 示例：</h3>嵌入区域：<span ng-transclude></span></div>',
+		restrict: 'AE', // E = Element, A = Attribute, C = Class, M = Comment
+		template: '<div><input type="text" ng-model="variable"/>{{variable}}</div>',
 		// templateUrl: '',
 		// replace: true,
-		transclude: true,
+		// transclude: true,
 		// compile: function(tElement, tAttrs, function transclude(function(scope, cloneLinkingFn){ return function linking(scope, elm, attrs){}})),
 		link: function($scope, iElm, iAttrs, controller) {
 			

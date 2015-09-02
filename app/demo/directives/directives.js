@@ -30,5 +30,32 @@ angular.module('clapse').config(function ($stateProvider, $urlRouterProvider, $h
                     templateUrl: 'demo/directives/demo-transclude.demo.html',
                 }
             }
+        })
+        .state('demo.directives.link', {
+            //parent: 'home',
+            url: '/link',
+            views: {
+                '': {
+                    templateUrl: 'demo/directives/demo-link.demo.html',
+                }
+            }
+        })
+        .state('demo.directives.nested', {
+            //parent: 'home',
+            url: '/nested',
+            views: {
+                '': {
+                    templateUrl: 'demo/directives/demo-nested.demo.html',
+                }
+            }
+        })
+        .state('demo.directives.isolateScope', {
+            //parent: 'home',
+            url: '/isolateScope',
+            views: {
+                '': {
+                    templateUrl: 'demo/directives/demo-isolateScope.demo.html',
+                }
+            }
         });
 });

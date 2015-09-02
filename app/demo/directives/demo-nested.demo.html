@@ -1,0 +1,26 @@
+<div class="container">
+	<h1>指令间交互</h1>
+	被依赖的directive的controller中暴露出方法<br>
+	require指定当前directive依赖关系，依赖directive link第4个参数注入被依赖directive的controller
+</div>
+<div class="container">
+	<ul>
+		<li>
+			<h5>demo-nested</h5>
+			<demo-nested>Click Me</demo-nested>
+		</li>
+		<li>
+			<h5>demo-nested+one</h5>
+			<demo-nested demo-sub-nested-one>Click Me</demo-nested>
+		</li>
+		<li>
+			<h5>demo-nested+one+two</h5>
+			<demo-nested demo-sub-nested-one demo-sub-nested-two>Click Me</demo-nested>
+		</li>
+		<li>
+			<h5>demo-nested+one+two+three</h5>
+			<demo-nested demo-sub-nested-one demo-sub-nested-two demo-sub-nested-three>Click Me</demo-nested>
+		</li>
+
+	</ul>
+</div>
