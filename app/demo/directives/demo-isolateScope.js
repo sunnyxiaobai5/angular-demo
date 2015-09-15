@@ -25,13 +25,15 @@ angular.module('demo').directive('demoIsolateScope', [function(){
 		restrict: 'AE', // E = Element, A = Attribute, C = Class, M = Comment
 		// 1、2、3
 		// template: '<div><input type="text" ng-model="variable"/>{{variable}}</div>',
-		// 4
-		template: '<div><input type="text" ng-model="variable"/><button ng-click="method({param:variable})">Click Me</button></div>',
+
+		// 4、将$scope.variable1绑定到参数param1上，$scope.variable2绑定到参数param2上，页面上不需要位置对应
+		template: '<div><input type="text" ng-model="variable1"/><button ng-click="method({param1:variable1,param2:variable2})">Click Me</button></div>',
 		// templateUrl: '',
 		// replace: true,
 		// transclude: true,
 		// compile: function(tElement, tAttrs, function transclude(function(scope, cloneLinkingFn){ return function linking(scope, elm, attrs){}})),
 		link: function($scope, iElm, iAttrs, controller) {
+
 			// 1、通过link函数的iAttrs获取数据
 			// $scope.variable = iAttrs.variable
 
@@ -40,6 +42,9 @@ angular.module('demo').directive('demoIsolateScope', [function(){
 			// 3、通过=与父scope双向绑定
 
 			// 4、通过&绑定父scope中的函数
+			$scope.variable1="参数1"
+			$scope.variable2="参数2"
+			
 		}
 	};
 }]);
@@ -50,7 +55,7 @@ angular.module('clapse').controller('DemoIsolateScopeControllerTwo', ['$scope', 
 	$scope.customVariable = '此数据通过link函数的iAttrs方式传递2';
 }]);
 angular.module('clapse').controller('DemoIsolateScopeControllerFour', ['$scope', function($scope){
-	$scope.customerMethod = function(pa){
-		alert("hello:"+pa)
+	$scope.customerMethod = function(pa1,pa2){
+		alert("controller：函数参数1："+pa1+" 函数参数2："+pa2)
 	};
 }]);

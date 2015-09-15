@@ -2,32 +2,46 @@
 	<h1>独立作用域</h1>
 </div>
 <div class="container">
-	<ul>
+	<ul class="list-unstyled">
 <!-- 		<li ng-controller="DemoIsolateScopeControllerOne">
 			1、通过link函数的iAttrs获取数据
 			<demo-isolate-scope variable="{{customVariable}}"></demo-isolate-scope>
 		</li>
-		<br> -->
-<!-- 		<li ng-controller="DemoIsolateScopeControllerTwo">
+		<br>
+		<li ng-controller="DemoIsolateScopeControllerTwo">
 			2、通过@传递<br>
 			controller<br>
 			<input type='text' ng-model='customVariable'>{{customVariable}}<br>
 			directive
 			<demo-isolate-scope variable="{{customVariable}}"></demo-isolate-scope>
 		</li>
-		<br> -->
-		<!-- <li>
+		<br>
+		<li>
 			3、通过=与父scope中的数据进行双向绑定<br>
 			controller<br>
 			<input type='text' ng-model='variable'>{{variable}}<br>
 			directive
 			<demo-isolate-scope variable='variable'></demo-isolate-scope>
-		</li> -->
-		<br>
-		<li ng-controller="DemoIsolateScopeControllerFour">
-			<demo-isolate-scope method="customerMethod(param)"></demo-isolate-scope>
-			<demo-isolate-scope method="customerMethod(param)"></demo-isolate-scope>
 		</li>
-
+		<br> -->
+		<li ng-controller="DemoIsolateScopeControllerFour">
+			<demo-isolate-scope method="customerMethod(param2,param1)"></demo-isolate-scope>
+			<demo-isolate-scope method="customerMethod(param1)"></demo-isolate-scope>
+		</li>
 	</ul>
+	<br>
+	<form name="myForm">
+			<div class="form-group col-md-4 clearfix">
+			    <label>Username:</label>
+			    <input type="text" class="form-control" name="" id="" placeholder="Username" ng-model="user.usernmae" required>
+		  	</div>
+		  	<div class="form-group col-md-4 clearfix">
+			    <label>Password:</label>
+			    <input type="text" class="form-control" name="" id="" placeholder="Password" ng-model="user.password" required>
+		  	</div>
+		  	<div class="form-group col-md-4 clearfix">
+				<input type="submit" class="btn btn-default" ng-disabled="myForm.$invalid">
+		  	</div>
+			
+		</form>
 </div>

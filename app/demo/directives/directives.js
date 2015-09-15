@@ -18,7 +18,7 @@ angular.module('clapse').config(function ($stateProvider, $urlRouterProvider, $h
             url: '/hello',
             views: {
                 '': {
-                    templateUrl: 'demo/directives/demo-hello.demo.html',
+                    templateUrl: 'demo/directives/demo-hello.demo.html'
                 }
             }
         })
@@ -27,7 +27,7 @@ angular.module('clapse').config(function ($stateProvider, $urlRouterProvider, $h
             url: '/transclude',
             views: {
                 '': {
-                    templateUrl: 'demo/directives/demo-transclude.demo.html',
+                    templateUrl: 'demo/directives/demo-transclude.demo.html'
                 }
             }
         })
@@ -36,7 +36,7 @@ angular.module('clapse').config(function ($stateProvider, $urlRouterProvider, $h
             url: '/link',
             views: {
                 '': {
-                    templateUrl: 'demo/directives/demo-link.demo.html',
+                    templateUrl: 'demo/directives/demo-link.demo.html'
                 }
             }
         })
@@ -45,7 +45,7 @@ angular.module('clapse').config(function ($stateProvider, $urlRouterProvider, $h
             url: '/nested',
             views: {
                 '': {
-                    templateUrl: 'demo/directives/demo-nested.demo.html',
+                    templateUrl: 'demo/directives/demo-nested.demo.html'
                 }
             }
         })
@@ -54,7 +54,16 @@ angular.module('clapse').config(function ($stateProvider, $urlRouterProvider, $h
             url: '/isolateScope',
             views: {
                 '': {
-                    templateUrl: 'demo/directives/demo-isolateScope.demo.html',
+                    templateUrl: 'demo/directives/demo-isolateScope.demo.html'
+                }
+            }
+        })
+        .state('demo.directives.accordion', {
+            //parent: 'home',
+            url: '/accordion',
+            views: {
+                '': {
+                    templateUrl: 'demo/directives/demo-accordion.demo.html'
                 }
             }
         });

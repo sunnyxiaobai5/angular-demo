@@ -1,0 +1,48 @@
+<style>
+	.css-accordion{
+		border: 3px solid yellow;
+	}
+	.css-collapse{
+		border: 1px solid blue;
+		margin-top: 2px;
+	}
+	.css-title{
+		border: 1px solid #DDD;
+		height: 30px;
+		line-height: 30px;
+		background-color: #FEFEFE;
+		color:#333;
+		cursor: pointer;
+	}
+	.css-text{
+		border: 1px solid #DDD;
+		height: 80px;
+		line-height: 30px;
+		background-color: #000;
+		color: #FEFEFE;
+	}
+</style>
+<div class="container">
+	<h3>手风琴Demo</h3>
+	accordion指令中嵌入多个collapse指令<br>
+</div>
+<div ng-controller="DemoAccordionController">
+	<div class="container">
+		<div class="col-md-6">
+			<demo-accordion>
+				<demo-collapse ng-repeat="(index, collapse) in collapses" title="collapse.title">
+					{{collapse.text}}
+				</demo-collapse>
+			</demo-accordion>
+		</div>
+	</div>
+	<br>
+	<div class="container">
+		<div class="col-md-6">
+			<demo-accordion>
+				<demo-collapse title="'标题1标题1'">内容1内容1</demo-collapse>
+				<demo-collapse title="'标题2标题2'">内容2内容2</demo-collapse>
+			</demo-accordion>
+		</div>
+	</div>
+</div>
