@@ -59,14 +59,5 @@ angular.module('demo',[]).run(function ($rootScope, $templateCache) {
                     templateUrl: 'tpls/components/sidebar/sidebar-config.html'
                 }
             }
-        })
-        .state('demo.others', {
-            //parent: 'student',
-            url: '/others',
-            views: {
-                '@': {
-                    templateUrl: 'tpls/components/sidebar/sidebar-others.html'
-                }
-            }
         });
 });	
