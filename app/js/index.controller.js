@@ -6,7 +6,7 @@ angular.module("clapse").controller("HomeController", ["$scope", function ($scop
         {id: 2, name: "name2", time: "2012-04-13"},
         {id: 3, name: "name3", time: "2012-01-12"},
         {id: 5, name: "name12", time: "2012-08-11"},
-        {id: 4, name: "name4", time: "2012-12-11"},
+        {id: 11, name: "name4", time: "2012-12-11"},
         {id: 6, name: "name5", time: "2012-05-13"},
         {id: 7, name: "name8", time: "2012-04-13"},
         {id: 8, name: "name7", time: "2012-03-11"}
@@ -14,7 +14,7 @@ angular.module("clapse").controller("HomeController", ["$scope", function ($scop
     ];
 
 
-    $scope.order = "id";
+    $scope.order = "";
 
     $scope.selectAllFlag = false;
 
@@ -25,7 +25,9 @@ angular.module("clapse").controller("HomeController", ["$scope", function ($scop
 
     $scope.sortFiled = '';
 
-    $scope.sort = false;
+    $scope.sort = true;
+
+    $scope.orderAsc = true;
 
 
     $scope.allChecked = function () {

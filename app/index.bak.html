@@ -83,26 +83,27 @@
 </div>
 
 <hr/>
+<!--<div class="container">-->
+
+    <!--<a href="javascrit:(0)" class="btn btn-default" ng-click="order='id';reverse=true">初始化按id排序</a>-->
+    <!--<a href="javascrit:(0)" class="btn btn-default" ng-click="order='name';reverse=!reverse">按名字排序</a>-->
+    <!--<a href="javascrit:(0)" class="btn btn-default" ng-click="order='time';reverse=!reverse">按时间排序</a>-->
+
+    <!--<div>-->
+        <!--<input type="checkbox" ng-change="allChecked()" ng-model="selectAllFlag"/>-->
+        <!--<ul>-->
+            <!--<li ng-repeat="item in infoList | orderBy:order:!reverse">-->
+                <!--<input type="checkbox" ng-model="item.selected"-->
+                       <!--ng-change="checkOne()"/>id:{{item.id}}----name:{{item.name}}-----time:{{item.time}}-->
+            <!--</li>-->
+        <!--</ul>-->
+    <!--</div>-->
+<!--</div>-->
+<!--<hr/>-->
+
 <div class="container">
 
-    <a href="javascrit:(0)" class="btn btn-default" ng-click="order='id';reverse=true">初始化按id排序</a>
-    <a href="javascrit:(0)" class="btn btn-default" ng-click="order='name';reverse=!reverse">按名字排序</a>
-    <a href="javascrit:(0)" class="btn btn-default" ng-click="order='time';reverse=!reverse">按时间排序</a>
-
-    <div>
-        <input type="checkbox" ng-change="allChecked()" ng-model="selectAllFlag"/>
-        <ul>
-            <li ng-repeat="item in infoList | orderBy:order:!reverse">
-                <input type="checkbox" ng-model="item.selected"
-                       ng-change="checkOne()"/>id:{{item.id}}----name:{{item.name}}-----time:{{item.time}}
-            </li>
-        </ul>
-    </div>
-</div>
-<hr/>
-
-<div class="container">
-
+    <a href="javascrit:(0)" class="btn btn-default" ng-click="sortFiled='';sort=true">不排序sortFiled:{{sortFiled}}--sort:{{!sort}}</a>
     <a href="javascrit:(0)" class="btn btn-default" ng-click="sortFiled='id';sort=!sort">初始化按id排序<span ng-if="sortFiled=='id'">--id<span ng-if="sort==true">--UP</span><span ng-if="sort==false">--DOWN</span></span></a>
     <a href="javascrit:(0)" class="btn btn-default" ng-click="sortFiled='name';sort=!sort">按名字排序<span ng-if="sortFiled=='name'">--name<span ng-if="sort==true">--UP</span><span ng-if="sort==false">--DOWN</span></span></a>
     <a href="javascrit:(0)" class="btn btn-default" ng-click="sortFiled='time';sort=!sort">按时间排序<span ng-if="sortFiled=='time'">--time<span ng-if="sort==true">--UP</span><span ng-if="sort==false">--DOWN</span></span></a>
@@ -110,9 +111,9 @@
     <div>
         <input type="checkbox" ng-change="allChecked()" ng-model="selectAllFlag"/>
         <ul>
-            <li ng-repeat="item in infoList | orderBy:sortFiled:sort">
+            <li ng-repeat="item in infoList | orderBy:sortFiled:!sort">
                 <input type="checkbox" ng-model="item.selected"
-                       ng-change="checkOne()"/>id:{{item.id}}----name:{{item.name}}-----time:{{item.time}}
+                       ng-change="checkOne()"/>id:{{item.id}}----name:{{item.name}}-----time:{{item.time}}-----hashKey:{{item.$$hashKey}}
             </li>
         </ul>
     </div>
@@ -129,8 +130,9 @@
 <script src="bower_components/angular/angular.min.js"></script>
 <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
 
+<script src="demo/demo.js"></script>
 <script src="js/app.js"></script>
-<script src="js/index.js"></script>
+<script src="js/index.controller.js"></script>
 <script src="tpls/components/navbar/navbar.js"></script>
 </body>
 </html>
