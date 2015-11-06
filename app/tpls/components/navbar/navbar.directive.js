@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('clopse').directive('navbar', ['$scope', function($scope){
+angular.module('clapse').directive('navbar', ['$scope', function($scope){
 	// Runs during compile
 	return {
 		// name: '',

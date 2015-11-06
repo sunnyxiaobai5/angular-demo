@@ -4,46 +4,29 @@
     <meta charset="UTF-8">
     <title></title>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+
+    <link rel="stylesheet" href="css/app.css">
 </head>
 <body>
 
 <!-- header start -->
-<div ui-view="navbar"></div>
-<!--<div ui-view></div>-->
+<div class="container">header</div>
 <!-- header end -->
 
-<!-- flash start -->
-<div class="container">
-    <div style="height:300px">
-        banner 区域
-    </div>
-    <hr/>
-</div>
-<!-- flash end -->
-
 <!-- main start -->
-<div class="container">
+<div class="container ng-cloak" ng-cloak>
     <div class="col-md-2">
         <ul class="nav nav-pills nav-stacked">
             <li class="active"><a href="#tab1" data-toggle="tab">导航1</a></li>
             <li><a href="#tab2" data-toggle="tab">导航1</a></li>
-            <li><a href="#tab2" data-toggle="tab">导航1</a></li>
-            <li><a href="#tab3" data-toggle="tab">导航1</a></li>
-            <li><a href="#tab4" data-toggle="tab">导航1</a></li>
         </ul>
     </div>
     <div class="tab-content col-md-8">
         <div class="tab-pane active" id="tab1">
-            内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1
+            内容1内容1内容1内容1内容1内容1内容1内容1内容1内
         </div>
         <div class="tab-pane" id="tab2">
-            内容2内容2内容2内容2内容2内容2内容2内容2内容2内容2内容2内容2内容2内容2内容2内容2内容2内容2内容2内容2内容2内容2内容2内容2内容2内容2内容2内容2内容2内容2内容2内容2内容2内容2内容2内容2内容2内容2内容2内容2内容2内容2内容2内容2
-        </div>
-        <div class="tab-pane" id="tab3">
-            内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3
-        </div>
-        <div class="tab-pane" id="tab4">
-            内容4内容4内容4内容4内容4内容4内容4内容4内容4内容4内容4内容4内容4内容4内容4内容4内容4内容4内容4内容4内容4内容4内容4内容4内容4内容4内容4内容4内容4内容4内容4内容4内容4内容4内容4内容4内容4内容4内容4内容4内容4内容4内容4内容4内容4内容4内容4内容4内容4内容4内容4内容4内容4内容4内容4内容4内容4内容4内容4内容4内容4内容4内容4内容4内容4内容4内容4内容4内容4内容4内容4内容4内容4内容4内容4内容4内容4内容4内容4内容4内容4内容4内容4内容4内容4内容4内容4内容4
+            内容2内容2内容2内容2内容2内容2内容2内容2内容2内
         </div>
     </div>
 </div>
@@ -51,7 +34,7 @@
 
 <hr/>
 
-<div class="container">
+<div class="container ng-cloak">
     <div class="col-md-2">
         <ul class="nav" id="accordion">
             <li class="active">
@@ -70,54 +53,54 @@
                     <li><a href="#">nav3</a></li>
                 </ul>
             </li>
-            <li>
-                <a href="#collapse3" data-toggle="collapse" data-parent="#accordion">导航3</a>
-                <ul class="collapse" id="collapse3">
-                    <li><a href="#">nav1</a></li>
-                    <li><a href="#">nav2</a></li>
-                    <li><a href="#">nav3</a></li>
-                </ul>
+        </ul>
+    </div>
+</div>
+
+<hr/>
+
+<div class="container">
+
+    <a href="javascrit:(0)" class="btn btn-default" ng-click="sortFiled = null; reverse = null">
+        不排序
+    </a>
+
+    <a href="javascrit:(0)" class="btn btn-default" ng-click="sortFiled = 'id'; reverse = !reverse">
+        按ID排序
+    </a>
+
+    <a href="javascrit:(0)" class="btn btn-default" ng-click="sortFiled = 'name'; reverse = !reverse">
+        按名字排序
+    </a>
+
+    <a href="javascrit:(0)" class="btn btn-default" ng-click="sortFiled = 'time'; reverse = !reverse">
+        按时间排序
+    </a>
+
+    <div>
+        <input type="checkbox" ng-change="checkAll()" ng-model="isSelectAll"/>全选&nbsp
+        当前排序字段：{{sortFiled}}
+        是否反序：{{reverse}}
+        <br>
+        <br>
+        <ul class="list-unstyled">
+            <li ng-repeat="item in infoList | orderBy : sortFiled : reverse">
+                <input type="checkbox" ng-model="item.selected" ng-change="checkOne()"/>
+                id:{{item.id}}----name:{{item.name}}-----time:{{item.time}}-----hashKey:{{item.$$hashKey}}
             </li>
         </ul>
     </div>
 </div>
 
 <hr/>
-<!--<div class="container">-->
 
-    <!--<a href="javascrit:(0)" class="btn btn-default" ng-click="order='id';reverse=true">初始化按id排序</a>-->
-    <!--<a href="javascrit:(0)" class="btn btn-default" ng-click="order='name';reverse=!reverse">按名字排序</a>-->
-    <!--<a href="javascrit:(0)" class="btn btn-default" ng-click="order='time';reverse=!reverse">按时间排序</a>-->
+<!--使用原生UE方式-->
+<div class="container" id="ue_origin"></div>
+<!--使用原生UE方式-->
 
-    <!--<div>-->
-        <!--<input type="checkbox" ng-change="allChecked()" ng-model="selectAllFlag"/>-->
-        <!--<ul>-->
-            <!--<li ng-repeat="item in infoList | orderBy:order:!reverse">-->
-                <!--<input type="checkbox" ng-model="item.selected"-->
-                       <!--ng-change="checkOne()"/>id:{{item.id}}----name:{{item.name}}-----time:{{item.time}}-->
-            <!--</li>-->
-        <!--</ul>-->
-    <!--</div>-->
-<!--</div>-->
-<!--<hr/>-->
-
-<div class="container">
-
-    <a href="javascrit:(0)" class="btn btn-default" ng-click="sortFiled='';sort=true">不排序sortFiled:{{sortFiled}}--sort:{{!sort}}</a>
-    <a href="javascrit:(0)" class="btn btn-default" ng-click="sortFiled='id';sort=!sort">初始化按id排序<span ng-if="sortFiled=='id'">--id<span ng-if="sort==true">--UP</span><span ng-if="sort==false">--DOWN</span></span></a>
-    <a href="javascrit:(0)" class="btn btn-default" ng-click="sortFiled='name';sort=!sort">按名字排序<span ng-if="sortFiled=='name'">--name<span ng-if="sort==true">--UP</span><span ng-if="sort==false">--DOWN</span></span></a>
-    <a href="javascrit:(0)" class="btn btn-default" ng-click="sortFiled='time';sort=!sort">按时间排序<span ng-if="sortFiled=='time'">--time<span ng-if="sort==true">--UP</span><span ng-if="sort==false">--DOWN</span></span></a>
-
-    <div>
-        <input type="checkbox" ng-change="allChecked()" ng-model="selectAllFlag"/>
-        <ul>
-            <li ng-repeat="item in infoList | orderBy:sortFiled:!sort">
-                <input type="checkbox" ng-model="item.selected"
-                       ng-change="checkOne()"/>id:{{item.id}}----name:{{item.name}}-----time:{{item.time}}-----hashKey:{{item.$$hashKey}}
-            </li>
-        </ul>
-    </div>
-</div>
+<!--使用angular方式-->
+<div class="container ueditor" id="ue_angular" ng-model="ue_angular"></div>
+<!--使用angular方式-->
 
 <!-- footer start -->
 <div class="container">
@@ -130,9 +113,14 @@
 <script src="bower_components/angular/angular.min.js"></script>
 <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
 
-<script src="demo/demo.js"></script>
+<script type="text/javascript" src="third_components/ueditor/ueditor.config.js"></script>
+<script type="text/javascript" src="third_components/ueditor/ueditor.all.js"></script>
+<script type="text/javascript" src="bower_components/angular-ueditor/dist/angular-ueditor.js"></script>
+
 <script src="js/app.js"></script>
 <script src="js/index.controller.js"></script>
-<script src="tpls/components/navbar/navbar.js"></script>
+<script>
+    UE.getEditor("ue_origin");
+</script>
 </body>
 </html>
