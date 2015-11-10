@@ -12,7 +12,9 @@
     "jquery": "~2.1.4",
     "angular-ui-router": "~0.2.15",
     "fontawesome": "~4.4.0",
-    "angular": "~1.4.6"
+    "angular": "~1.4.6",
+    "ueditor": "~1.4.3",
+    "angular-ueditor": "*"
   },
   "keywords": [
     "angularjs"
