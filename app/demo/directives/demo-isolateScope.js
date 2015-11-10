@@ -54,7 +54,11 @@ angular.module('clapse').controller('DemoIsolateScopeControllerOne', ['$scope', 
 angular.module('clapse').controller('DemoIsolateScopeControllerTwo', ['$scope', function($scope){
 	$scope.customVariable = '此数据通过link函数的iAttrs方式传递2';
 }]);
-angular.module('clapse').controller('DemoIsolateScopeControllerFour', ['$scope', function($scope){
+angular.module('clapse').controller('DemoIsolateScopeControllerFour', ['$scope','$http', function($scope,$http){
+	$http.post("goods").success(function(){
+		
+	});
+
 	$scope.customerMethod = function(pa1,pa2){
 		alert("controller：函数参数1："+pa1+" 函数参数2："+pa2)
 	};

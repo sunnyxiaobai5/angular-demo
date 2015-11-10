@@ -20,6 +20,9 @@ angular.module('clapse').config(function ($stateProvider, $urlRouterProvider, $h
                 '': {
                     templateUrl: 'demo/directives/demo-hello.demo.html'
                 }
+            },
+            data: {
+                pageTitle: "good"
             }
         })
         .state('demo.directives.transclude', {

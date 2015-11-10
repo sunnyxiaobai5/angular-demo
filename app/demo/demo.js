@@ -22,7 +22,7 @@ angular.module('demo',[]).run(function ($rootScope, $templateCache) {
                 'footer@': {
                     templateUrl: 'tpls/components/footer/footer.html'
                 }
-            },
+            }
         })
         .state('demo.index', {
             //parent: 'demo',
@@ -31,6 +31,9 @@ angular.module('demo',[]).run(function ($rootScope, $templateCache) {
                 '@': {
                     templateUrl: 'tpls/home/index.html'
                 }
+            },
+            data: {
+                pageTitle: "你好"
             }
         })
         .state('demo.services', {
