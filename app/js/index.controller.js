@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module("clapse", ["ng.ueditor"]).controller("HomeController", ["$scope", function ($scope) {
+angular.module("clapse").controller("HomeController", ["$scope", function ($scope) {
     $scope.infoList = [
         {id: 1, name: "name1", time: "2012-03-11"},
         {id: 2, name: "name2", time: "2012-04-13"},
