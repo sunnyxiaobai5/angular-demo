@@ -1,0 +1,26 @@
+<div class="container">
+    <h1>Ueditor原生及组件方式使用</h1>
+    <br>
+</div>
+<div class="container">
+    <h3>原生使用方式</h3>
+
+    <div id="ue_origin"></div>
+
+    <br>
+
+    <h3>组件使用方式</h3>
+
+    <div class="ueditor" id="ue_angular" ready="ueReady" ng-model="ueContent"></div>
+    <br>
+
+    <div class="input-group">
+        <input type="text" class="form-control" ng-model="ueContent"/>
+        <br>
+        <button class="btn btn-default" ng-click="getContent()">点击获取编辑器内容</button>
+    </div>
+</div>
+<!--使用原生方式时，需要以下代码-->
+<script>
+    UE.getEditor("ue_origin");
+</script>

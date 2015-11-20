@@ -32,5 +32,14 @@ angular.module('clapse').config(function ($stateProvider, $urlRouterProvider, $h
                     controller: 'DemoCheckboxController'
                 }
             }
+        }).state('demo.others.ueditor', {
+            //parent: 'home',
+            url: '/ueditor',
+            views: {
+                '': {
+                    templateUrl: 'demo/others/demo-ueditor.demo.html',
+                    controller: 'DemoUeditorController'
+                }
+            }
         });
 });
