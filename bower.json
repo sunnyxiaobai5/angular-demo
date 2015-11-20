@@ -14,7 +14,8 @@
     "fontawesome": "~4.4.0",
     "angular": "~1.4.6",
     "ueditor": "~1.4.3",
-    "angular-ueditor": "*"
+    "angular-ueditor": "*",
+    "angular-local-storage": "~0.2.3"
   },
   "keywords": [
     "angularjs"
