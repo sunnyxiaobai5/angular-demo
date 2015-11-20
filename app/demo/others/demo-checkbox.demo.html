@@ -1,0 +1,37 @@
+<div class="container">
+    <h1>Checkbox列表：单全选关联</h1>
+    <br>
+</div>
+
+<div class="container">
+
+    <a href="javascrit:(0)" class="btn btn-default" ng-click="sortFiled = null; reverse = null">
+        不排序
+    </a>
+
+    <a href="javascrit:(0)" class="btn btn-default" ng-click="sortFiled = 'id'; reverse = !reverse">
+        按ID排序
+    </a>
+
+    <a href="javascrit:(0)" class="btn btn-default" ng-click="sortFiled = 'name'; reverse = !reverse">
+        按名字排序
+    </a>
+
+    <a href="javascrit:(0)" class="btn btn-default" ng-click="sortFiled = 'time'; reverse = !reverse">
+        按时间排序
+    </a>
+
+    <div>
+        <input type="checkbox" ng-change="checkAll()" ng-model="isSelectAll"/>全选&nbsp
+        当前排序字段：{{sortFiled}}
+        是否反序：{{reverse}}
+        <br>
+        <br>
+        <ul class="list-unstyled">
+            <li ng-repeat="item in infoList | orderBy : sortFiled : reverse">
+                <input type="checkbox" ng-model="item.selected" ng-change="checkOne()"/>
+                id:{{item.id}}----name:{{item.name}}-----time:{{item.time}}-----hashKey:{{item.$$hashKey}}
+            </li>
+        </ul>
+    </div>
+</div>

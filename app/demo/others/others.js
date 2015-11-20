@@ -19,7 +19,17 @@ angular.module('clapse').config(function ($stateProvider, $urlRouterProvider, $h
             views: {
                 '': {
                     templateUrl: 'demo/others/demo-debounce.demo.html',
-                    controller:'DemoDebounceController'
+                    controller: 'DemoDebounceController'
+                }
+            }
+        })
+        .state('demo.others.checkbox', {
+            //parent: 'home',
+            url: '/checkbox',
+            views: {
+                '': {
+                    templateUrl: 'demo/others/demo-checkbox.demo.html',
+                    controller: 'DemoCheckboxController'
                 }
             }
         });
