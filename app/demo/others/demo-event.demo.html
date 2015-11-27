@@ -1,0 +1,31 @@
+<div class="container">
+    <h1>emit & broadcast传递范围</h1>
+    <br>
+</div>
+<div class="container" ng-controller="DemoEventController">
+    <h3>父级：</h3>
+    broadcastVal: <label>{{broadcastVal}}</label>
+    <button class="btn btn-default" ng-click="broadcast()">点击broadcast</button>
+    <br/>
+    emitVal: <label>{{emitVal}}</label>
+    <button class="btn btn-default" ng-click="emit()">点击emit</button>
+    <br/>
+    <br/>
+
+    <div class="input-group" ng-controller="DemoEventController">
+        broadcastVal: <label>{{broadcastVal}}</label>
+        <button class="btn btn-default" ng-click="broadcast()">点击broadcast</button>
+        <br/>
+        emitVal: <label>{{emitVal}}</label>
+        <button class="btn btn-default" ng-click="emit()">点击emit</button>
+    </div>
+
+    <div class="input-group" ng-controller="DemoEventController">
+        broadcastVal: <label>{{broadcastVal}}</label>
+        <button class="btn btn-default" ng-click="broadcast()">点击broadcast</button>
+        <br/>
+        emitVal: <label>{{emitVal}}</label>
+        <button class="btn btn-default" ng-click="emit()">点击emit</button>
+        <br>
+    </div>
+</div>

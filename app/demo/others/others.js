@@ -41,5 +41,13 @@ angular.module('clapse').config(function ($stateProvider, $urlRouterProvider, $h
                     controller: 'DemoUeditorController'
                 }
             }
+        }).state('demo.others.event', {
+            //parent: 'home',
+            url: '/event',
+            views: {
+                '': {
+                    templateUrl: 'demo/others/demo-event.demo.html'
+                }
+            }
         });
 });
