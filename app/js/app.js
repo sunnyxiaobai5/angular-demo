@@ -2,12 +2,12 @@
 
 angular.module('clapse', ['ui.router', 'ng.ueditor', 'demo']).run(function ($rootScope, $state, $templateCache) {
 
-    $rootScope.$on('stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
+    $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
         $rootScope.toState = toState;
         $rootScope.toStateParams = toParams;
     });
 
-    $rootScope.$on('stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
+    $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
         $rootScope.previousStateName = fromState.name;
         $rootScope.previousStateParams = fromParams;
 
@@ -16,11 +16,11 @@ angular.module('clapse', ['ui.router', 'ng.ueditor', 'demo']).run(function ($roo
         }
     });
 
-    $rootScope.$on('stateNotFound', function (event, unfoundState, fromState, fromParams) {
+    $rootScope.$on('$stateNotFound', function (event, unfoundState, fromState, fromParams) {
 
     });
 
-    $rootScope.$on('stateChangeError', function (event, toState, toParams, fromState, fromParams, error) {
+    $rootScope.$on('$stateChangeError', function (event, toState, toParams, fromState, fromParams, error) {
 
     });
 
