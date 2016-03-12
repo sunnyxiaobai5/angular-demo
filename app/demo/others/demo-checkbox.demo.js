@@ -1,4 +1,5 @@
 'use strict';
+
 angular.module('clapse').controller('DemoCheckboxController', ['$scope', function ($scope) {
     $scope.infoList = [
         {id: 1, name: "name1", time: "2012-03-11"},

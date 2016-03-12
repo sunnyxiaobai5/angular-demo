@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('clapse', ['ui.router', 'ng.ueditor', 'demo']).run(function ($rootScope, $state, $templateCache) {
+angular.module('clapse', ['ui.router', 'ng.ueditor', 'demo']).run(function ($rootScope, $state, $templateCache, $window) {
 
     $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
         $rootScope.toState = toState;
@@ -11,8 +11,10 @@ angular.module('clapse', ['ui.router', 'ng.ueditor', 'demo']).run(function ($roo
         $rootScope.previousStateName = fromState.name;
         $rootScope.previousStateParams = fromParams;
 
-        if (toState && toState.data.pageTitle) {
+        if (toState && toState.data && toState.data.pageTitle) {
             $window.document.title = toState.data.pageTitle;
+        } else {
+            $window.document.title = 'AngularJS Demo';
         }
     });
 

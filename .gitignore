@@ -3,5 +3,4 @@
 .idea/
 *.iml
 *.log
-/assets
 /build

@@ -4,17 +4,15 @@ angular.module('clapse').config(function ($stateProvider, $urlRouterProvider, $h
 
     $stateProvider
         .state('demo.directives', {
-            //parent: 'home',
             url: '/directives',
             views: {
                 '@': {
-                    templateUrl: 'tpls/components/sidebar/sidebar-directives.html',
+                    templateUrl: 'components/03-sidebar/sidebar-directives.html',
                     controller: 'HomeController'
                 }
             }
         })
         .state('demo.directives.hello', {
-            //parent: 'home',
             url: '/hello',
             views: {
                 '': {
@@ -26,7 +24,6 @@ angular.module('clapse').config(function ($stateProvider, $urlRouterProvider, $h
             }
         })
         .state('demo.directives.transclude', {
-            //parent: 'home',
             url: '/transclude',
             views: {
                 '': {
@@ -35,7 +32,6 @@ angular.module('clapse').config(function ($stateProvider, $urlRouterProvider, $h
             }
         })
         .state('demo.directives.link', {
-            //parent: 'home',
             url: '/link',
             views: {
                 '': {
@@ -44,7 +40,6 @@ angular.module('clapse').config(function ($stateProvider, $urlRouterProvider, $h
             }
         })
         .state('demo.directives.nested', {
-            //parent: 'home',
             url: '/nested',
             views: {
                 '': {
@@ -53,7 +48,6 @@ angular.module('clapse').config(function ($stateProvider, $urlRouterProvider, $h
             }
         })
         .state('demo.directives.isolateScope', {
-            //parent: 'home',
             url: '/isolateScope',
             views: {
                 '': {
@@ -62,7 +56,6 @@ angular.module('clapse').config(function ($stateProvider, $urlRouterProvider, $h
             }
         })
         .state('demo.directives.accordion', {
-            //parent: 'home',
             url: '/accordion',
             views: {
                 '': {

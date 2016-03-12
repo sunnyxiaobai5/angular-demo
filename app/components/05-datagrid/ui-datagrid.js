@@ -16,7 +16,7 @@ angular.module('elapse.ui', []).directive('uiDatagrid', ['$http', function ($htt
         // require: 'ngModel', // Array = multiple requires, ? = optional, ^ = check parent elements
         restrict: 'AE', // E = Element, A = Attribute, C = Class, M = Comment
         // template: '<div>你好</div>',
-        templateUrl: '../../tpls/directives/ui-datagrid.html',
+        templateUrl: './ui-datagrid.html',
         replace: true,
         // transclude: true,
         // compile: function(tElement, tAttrs, function transclude(function(scope, cloneLinkingFn){ return function linking(scope, elm, attrs){}})),

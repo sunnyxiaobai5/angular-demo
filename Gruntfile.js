@@ -9,8 +9,10 @@ module.exports = function (grunt) {
             },
             dist: {
                 src: [
-                    'app/**/*.js',
-                    'app/js/app.js'
+                    'app/demo/**/*.js',
+                    'app/js/*.js',
+                    'app/static/**/*.js',
+                    'app/tpls/**/*.js'
                 ],
                 dest: 'build/build.js'
             }
@@ -30,10 +32,10 @@ module.exports = function (grunt) {
             },
             compress: {
                 files: {
-                    'assets/css/default.css': [
-                        "app/css/app.css",
-                        "css/pops.css",
-                        "css/index.css"
+                    'build/assets/css/default.css': [
+                        'app/css/app.css',
+                        'css/pops.css',
+                        'css/index.css'
                     ]
                 }
             }

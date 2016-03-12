@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('demo').directive('demoAccordion', [function() {
     // Runs during compile
     return {

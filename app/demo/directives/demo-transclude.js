@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('demo').directive('demoTransclude', ['$rootScope', function($rootScope){
 	// Runs during compile
 	return {

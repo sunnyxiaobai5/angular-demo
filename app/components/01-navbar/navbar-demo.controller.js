@@ -14,16 +14,6 @@ angular.module("clapse").controller("NavbarController", ["$scope", function ($sc
 			'state':'demo.index',
 			'displayName':'Demo',
 			'icon':'glyphicon glyphicon-apple'
-		},
-		{
-			'state':'teacher.index',
-			'displayName':'Teacher',
-			'icon':'glyphicon glyphicon-hourglass'
-		},
-		{
-			'state':'student.index',
-			'displayName':'Student',
-			'icon':'glyphicon glyphicon-hourglass'
 		}
 	];
 
@@ -47,6 +37,6 @@ angular.module("clapse").controller("NavbarController", ["$scope", function ($sc
 		{
 			'state':'.others',
 			'displayName':'Others'
-		},
+		}
 	]
 }]);

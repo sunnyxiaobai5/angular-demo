@@ -11,25 +11,23 @@ angular.module('demo',[]).run(function ($rootScope, $templateCache) {
 
     $stateProvider
         .state('demo', {
-            'abstract': true,
-            // parent: 'site',  
+            abstract: true,
             url: '/demo',
             views: {
                 'navbar@': {
-                    templateUrl: 'tpls/components/navbar/navbar-demo.html',
+                    templateUrl: 'components/01-navbar/navbar-demo.html',
                     controller: 'NavbarController'
                 },
                 'footer@': {
-                    templateUrl: 'tpls/components/footer/footer.html'
+                    templateUrl: 'components/02-footer/footer.html'
                 }
             }
         })
         .state('demo.index', {
-            //parent: 'demo',
             url: '/index',
             views: {
                 '@': {
-                    templateUrl: 'tpls/home/index.html'
+                    templateUrl: 'scripts/home/index.html'
                 }
             },
             data: {
@@ -37,29 +35,26 @@ angular.module('demo',[]).run(function ($rootScope, $templateCache) {
             }
         })
         .state('demo.services', {
-            //parent: 'student',
             url: '/services',
             views: {
                 '@': {
-                    templateUrl: 'tpls/components/sidebar/sidebar-services.html'
+                    templateUrl: 'components/03-sidebar/sidebar-services.html'
                 }
             }
         })
         .state('demo.filters', {
-            //parent: 'student',
             url: '/filters',
             views: {
                 '@': {
-                    templateUrl: 'tpls/components/sidebar/sidebar-filters.html'
+                    templateUrl: 'components/03-sidebar/sidebar-filters.html'
                 }
             }
         })
         .state('demo.config', {
-            //parent: 'student',
             url: '/config',
             views: {
                 '@': {
-                    templateUrl: 'tpls/components/sidebar/sidebar-config.html'
+                    templateUrl: 'components/03-sidebar/sidebar-config.html'
                 }
             }
         });

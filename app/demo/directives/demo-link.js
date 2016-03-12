@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 angular.module('clapse').directive('demoLink', [function(){
 	// Runs during compile

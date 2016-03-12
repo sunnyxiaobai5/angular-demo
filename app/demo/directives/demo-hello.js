@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('demo').directive('demoHello', ['$templateCache', function($templateCache){
     // Runs during compile
     return {

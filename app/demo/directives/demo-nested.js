@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 angular.module('demo').directive('demoNested', [function() {
     // Runs during compile

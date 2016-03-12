@@ -8,19 +8,18 @@ angular.module('clapse').config(function ($stateProvider, $urlRouterProvider, $h
 
     $stateProvider
         .state('home', {
-            'abstract': true,
-            // parent: 'site',  
+            abstract: true,
             url: '/home',
             data: {
                 roles: []
             },
             views: {
                 'navbar@': {
-                    templateUrl: 'tpls/components/navbar/navbar-home.html',
+                    templateUrl: 'components/01-navbar/navbar-home.html',
                     controller: 'NavbarController'
                 },
                 'footer@': {
-                    templateUrl: 'tpls/components/footer/footer.html'
+                    templateUrl: 'components/02-footer/footer.html'
                 }
             },
             resolve: {
@@ -31,58 +30,52 @@ angular.module('clapse').config(function ($stateProvider, $urlRouterProvider, $h
             }
         })
         .state('home.index', {
-            //parent: 'home',
             url: '/index',
             views: {
                 '@': {
-                    templateUrl: 'tpls/home/index.html',
+                    templateUrl: 'scripts/home/index.html',
                     controller: 'HomeController'
                 }
             }
         })
 
         .state('home.directives', {
-            //parent: 'home',
             url: '/directives',
             views: {
                 '@': {
-                    templateUrl: 'tpls/components/sidebar/sidebar-directives.html'
+                    templateUrl: 'components/03-sidebar/sidebar-directives.html'
                 }
             }
         })
         .state('home.services', {
-            //parent: 'student',
             url: '/services',
             views: {
                 '@': {
-                    templateUrl: 'tpls/components/sidebar/sidebar-services.html'
+                    templateUrl: 'components/03-sidebar/sidebar-services.html'
                 }
             }
         })
         .state('home.filters', {
-            //parent: 'student',
             url: '/filters',
             views: {
                 '@': {
-                    templateUrl: 'tpls/components/sidebar/sidebar-filters.html'
+                    templateUrl: 'components/03-sidebar/sidebar-filters.html'
                 }
             }
         })
         .state('home.config', {
-            //parent: 'student',
             url: '/config',
             views: {
                 '@': {
-                    templateUrl: 'tpls/components/sidebar/sidebar-config.html'
+                    templateUrl: 'components/03-sidebar/sidebar-config.html'
                 }
             }
         })
         .state('home.others', {
-            //parent: 'student',
             url: '/others',
             views: {
                 '@': {
-                    templateUrl: 'tpls/components/sidebar/sidebar-others.html'
+                    templateUrl: 'components/03-sidebar/sidebar-others.html'
                 }
             }
         });

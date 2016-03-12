@@ -4,17 +4,15 @@ angular.module('clapse').config(function ($stateProvider, $urlRouterProvider, $h
 
     $stateProvider
         .state('demo.others', {
-            //parent: 'home',
             url: '/others',
             views: {
                 '@': {
-                    templateUrl: 'tpls/components/sidebar/sidebar-others.html',
+                    templateUrl: 'components/03-sidebar/sidebar-others.html',
                     controller: 'HomeController'
                 }
             }
         })
         .state('demo.others.debounce', {
-            //parent: 'home',
             url: '/debounce',
             views: {
                 '': {
@@ -24,7 +22,6 @@ angular.module('clapse').config(function ($stateProvider, $urlRouterProvider, $h
             }
         })
         .state('demo.others.checkbox', {
-            //parent: 'home',
             url: '/checkbox',
             views: {
                 '': {
@@ -33,7 +30,6 @@ angular.module('clapse').config(function ($stateProvider, $urlRouterProvider, $h
                 }
             }
         }).state('demo.others.ueditor', {
-            //parent: 'home',
             url: '/ueditor',
             views: {
                 '': {
@@ -42,7 +38,6 @@ angular.module('clapse').config(function ($stateProvider, $urlRouterProvider, $h
                 }
             }
         }).state('demo.others.event', {
-            //parent: 'home',
             url: '/event',
             views: {
                 '': {
