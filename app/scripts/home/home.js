@@ -33,8 +33,7 @@ angular.module('clapse').config(function ($stateProvider, $urlRouterProvider, $h
             url: '/index',
             views: {
                 '@': {
-                    templateUrl: 'scripts/home/index.html',
-                    controller: 'HomeController'
+                    templateUrl: 'scripts/home/index.html'
                 }
             }
         })

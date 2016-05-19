@@ -7,8 +7,7 @@ angular.module('clapse').config(function ($stateProvider, $urlRouterProvider, $h
             url: '/others',
             views: {
                 '@': {
-                    templateUrl: 'components/03-sidebar/sidebar-others.html',
-                    controller: 'HomeController'
+                    templateUrl: 'components/03-sidebar/sidebar-others.html'
                 }
             }
         })
