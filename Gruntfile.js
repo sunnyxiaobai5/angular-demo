@@ -15,7 +15,7 @@ module.exports = function (grunt) {
                     'app/static/**/*.js',
                     'app/tpls/**/*.js'
                 ],
-                dest: 'build/build.js'
+                dest: 'app/build/build.js'
             }
         },
         uglify: {
@@ -30,8 +30,8 @@ module.exports = function (grunt) {
                 }
             },
             build: {
-                src: 'build/build.js',
-                dest: 'build/build.min.js'
+                src: 'app/build/build.js',
+                dest: 'app/build/build.min.js'
             }
         },
         cssmin: {
@@ -40,9 +40,23 @@ module.exports = function (grunt) {
             },
             compress: {
                 files: {
-                    'build/build.min.css': [
+                    'app/build/build.min.css': [
                         'app/assets/styles/app.css'
                     ]
+                }
+            }
+        },
+        useminPrepare: {
+            html: 'index.html',
+            options: {
+                flow: {
+                    html: {
+                        steps: {
+                            js: ['concat', 'uglify'],
+                            css: ['concat', 'cssmin']
+                        },
+                        post: {}
+                    }
                 }
             }
         }
@@ -57,4 +71,17 @@ module.exports = function (grunt) {
 
     //×¢²áÄ¬ÈÏtask
     grunt.registerTask('default', ['concat', 'uglify', 'cssmin']);
+
+    //simple build task
+    grunt.registerTask('build', [
+        'useminPrepare',
+        // 'concat:generated',
+        // 'cssmin:generated',
+        // 'uglify:generated',
+        'concat',
+        'cssmin',
+        'uglify',
+        // 'filerev',
+        'usemin'
+    ]);
 };
