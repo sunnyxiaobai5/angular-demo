@@ -4,7 +4,8 @@ module.exports = function (grunt) {
         pkg: grunt.file.readJSON('package.json'),
         concat: {
             options: {
-                //separator: ';',
+                //合并时每个文件之间插入该隔符
+                separator: ';'
                 //stripBanners: true
             },
             dist: {
@@ -19,7 +20,14 @@ module.exports = function (grunt) {
         },
         uglify: {
             options: {
-                banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
+                //压缩后文件banner说明
+                banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n',
+                //是否混淆 true:是，false:否
+                mangle: true,
+                compress: {
+                    //是否删除console.*等函数调用
+                    drop_console: true
+                }
             },
             build: {
                 src: 'build/build.js',
@@ -32,10 +40,8 @@ module.exports = function (grunt) {
             },
             compress: {
                 files: {
-                    'build/assets/css/default.css': [
-                        'app/css/app.css',
-                        'css/pops.css',
-                        'css/index.css'
+                    'build/build.min.css': [
+                        'app/assets/styles/app.css'
                     ]
                 }
             }
