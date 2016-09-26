@@ -61,5 +61,13 @@ angular.module('clapse').config(function ($stateProvider, $urlRouterProvider, $h
                     templateUrl: 'demo/directives/demo-accordion.demo.html'
                 }
             }
+        })
+        .state('demo.directives.validation', {
+            url: '/validation',
+            views: {
+                '': {
+                    templateUrl: 'demo/directives/demo-validation.demo.html'
+                }
+            }
         });
 });
