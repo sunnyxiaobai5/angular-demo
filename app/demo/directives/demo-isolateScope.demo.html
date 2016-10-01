@@ -25,6 +25,7 @@
 		</li>
 		<br> -->
 		<li ng-controller="DemoIsolateScopeControllerFour">
+			<input type="text" class="form-control" ui-validation="options" ng-model="name"/>
 			<demo-isolate-scope method="customerMethod(param2,param1)"></demo-isolate-scope>
 			<demo-isolate-scope method="customerMethod(param1)"></demo-isolate-scope>
 		</li>
@@ -42,6 +43,6 @@
 		  	<div class="form-group col-md-4 clearfix">
 				<input type="submit" class="btn btn-default" ng-disabled="myForm.$invalid">
 		  	</div>
-			
+
 		</form>
 </div>

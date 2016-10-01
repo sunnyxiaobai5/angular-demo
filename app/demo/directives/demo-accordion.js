@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('demo').directive('demoAccordion', [function() {
+angular.module('demo').directive('demoAccordion', [function () {
     // Runs during compile
     return {
         // require: 'ngModel', // Array = multiple requires, ? = optional, ^ = check parent elements
@@ -8,16 +8,16 @@ angular.module('demo').directive('demoAccordion', [function() {
         template: '<div class="css-accordion" ng-transclude></div>',
         replace: true,
         transclude: true,
-        controller: function($scope, $element, $attrs, $transclude) {
+        controller: function ($scope, $element, $attrs, $transclude) {
             var collapses = [];
             // 添加Collapse到Accordion中
-            this.addCollapse = function(collapse) {
+            this.addCollapse = function (collapse) {
                 collapses.push(collapse);
             };
 
             //获取当前激活的Collapse
-            this.getActive = function(collapse) {
-                angular.forEach(collapses, function(item) {
+            this.getActive = function (collapse) {
+                angular.forEach(collapses, function (item) {
                     if (item != collapse) {
                         item.show = false;
                     }
@@ -26,7 +26,7 @@ angular.module('demo').directive('demoAccordion', [function() {
         }
     };
 }]);
-angular.module('demo').directive('demoCollapse', [function() {
+angular.module('demo').directive('demoCollapse', [function () {
     // Runs during compile
     return {
         scope: {
@@ -37,17 +37,23 @@ angular.module('demo').directive('demoCollapse', [function() {
         template: '<div class="css-collapse"><div ng-click="toggle()" class="css-title">{{title}}</div><div class="css-text" ng-show="show" ng-transclude></div></div>',
         replace: true,
         transclude: true,
-        link: function($scope, iElm, iAttrs, controller) {
+        link: function ($scope, iElm, iAttrs, controller) {
             $scope.show = false;
             controller.addCollapse($scope);
-            $scope.toggle = function() {
+            $scope.toggle = function () {
                 $scope.show = !$scope.show;
                 controller.getActive($scope);
             };
         }
     };
 }]);
-angular.module('demo').controller('DemoAccordionController', ['$scope', function($scope) {
+angular.module('demo').controller('DemoAccordionController', ['$scope', function ($scope) {
+    $scope.options = {
+        callback: function () {
+            console.log(1)
+        }
+    };
+
     $scope.collapses = [{
         title: 'collapse1',
         text: 'text1'

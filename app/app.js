@@ -4,6 +4,7 @@ angular.module('clapse', ['ui.router', 'ng.ueditor', 'demo', 'ui.clapse'])
     .run(function ($rootScope, $state, $templateCache, $window) {
 
         $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
+            $(window).unbind('scroll');
             $rootScope.toState = toState;
             $rootScope.toStateParams = toParams;
         });
